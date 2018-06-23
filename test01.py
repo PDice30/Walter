@@ -1,6 +1,6 @@
 from midiutil import MIDIFile
 
-degrees  = [60, 62, 64, 65, 67, 69, 71, 72]  # MIDI note number
+degrees  = [0, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120]  # MIDI note number
 track    = 0
 channel  = 0
 time     = 0    # In beats
@@ -8,8 +8,7 @@ duration = 1    # In beats
 tempo    = 60   # In BPM
 volume   = 100  # 0-127, as per the MIDI standard
 
-MyMIDI = MIDIFile(1)  # One track, defaults to format 1 (tempo track is created
-                      # automatically)
+MyMIDI = MIDIFile(1)  # One track, defaults to format 1 (tempo track is created automatically)
 MyMIDI.addTempo(track, time, tempo)
 
 for i, pitch in enumerate(degrees):
