@@ -1,9 +1,25 @@
 import copy
+from note import Note
 
 
 class Chord:
-    # base range for notes = 48 (C) to 59 (B)
+    # Should there be a ChordFactory class?
+    # What should a 'Chord' have as properties?
+    # Notes, Duration.  Should the notes themselves have the duration or the chord itself?
 
+    notes:      list  # of Note objects -- Make this explicit somehow?
+    name:       str   # optional chord name
+    duration:   int   # n beats
+    time:       int   # in beats, time in the track when the note actually begins playing
+    track:      int
+    channel:    int
+    volume:     int   # 0 - 127
+
+    def __init__(self, notes = None, name = ''):
+        self.notes = notes
+        self.name = name
+
+    # base range for notes = 48 (C) to 59 (B)
     ROOT_Cb = 47
     ROOT_C  = 48
     ROOT_Cs = 49
@@ -27,6 +43,7 @@ class Chord:
     ROOT_Bs = 60
 
     ROOT_Note = 0
+
     STEP_Min2 = 1
     STEP_Maj2 = 2
     STEP_Min3 = 3
@@ -53,8 +70,15 @@ class Chord:
 
     # There shouldn't be note specifications, it should all be derivable from the input
     # Account for inversions
-    CHORD_Major = [ROOT_Note, ROOT_Note + STEP_Maj3, ROOT_Note + STEP_Perf5]
-    CHORD_Minor = [ROOT_Note, ROOT_Note + STEP_Min3, ROOT_Note + STEP_Perf5]
+    CHORD_Major = [Note(ROOT_Note),
+                   Note(ROOT_Note + STEP_Maj3),
+                   Note(ROOT_Note + STEP_Perf5)]
+    CHORD_Minor = [Note(ROOT_Note),
+                   Note(ROOT_Note + STEP_Min3),
+                   Note(ROOT_Note + STEP_Perf5)]
+
+    # CHORD_Major2 = [ROOT_Note, ROOT_Note + STEP_Maj3, ROOT_Note + STEP_Perf5]
+    # CHORD_Minor2 = [ROOT_Note, ROOT_Note + STEP_Min3, ROOT_Note + STEP_Perf5]
 
     C_major     = [ROOT_C, ROOT_C + STEP_Maj3, ROOT_C + STEP_Perf5]
     C_maj7      = [ROOT_C, ROOT_C + STEP_Maj3, ROOT_C + STEP_Perf5, ROOT_C + STEP_Maj7]
@@ -63,19 +87,55 @@ class Chord:
     def key_translation(self, step, chord):
         new_chord = copy.copy(chord)
         for i, note in enumerate(chord):
-            new_chord[i] = chord[i] + step
+            new_chord.notes[i] = chord.notes[i] + step
         return new_chord
 
     # Can this be made more functional for all chords?
     # root should be the midi value of the pitch class
     def chord_major(self, root):
-        new_chord = list(range(len(Chord.CHORD_Major)))
-        for i, note in enumerate(Chord.CHORD_Major):
-            new_chord[i] = Chord.CHORD_Major[i] + root
+        new_chord = Chord()
+        new_chord.notes = Chord.CHORD_Major
+        for i, note in enumerate(new_chord.notes):
+            new_chord.notes[i].pitch += root
         return new_chord
 
     def chord_minor(self, root):
-        new_chord = list(range(len(Chord.CHORD_Minor)))
-        for i, note in enumerate(Chord.CHORD_Minor):
-            new_chord[i] = Chord.CHORD_Minor[i] + root
+        new_chord = Chord()
+        new_chord.notes = Chord.CHORD_Minor
+        for i, note in enumerate(new_chord.notes):
+            new_chord.notes[i].pitch += root
         return new_chord
+
+    # Prints everything you might need to know about this method
+    def chord_major_doc(self, root):
+        print('Root Note: ', root)
+        new_chord = Chord()
+        new_chord.notes = Chord.CHORD_Major
+        for i, note in enumerate(Chord.CHORD_Major):
+            print(i)
+            print('Note Object: ', Chord.CHORD_Major[i])
+            print('Pitch: ', Chord.CHORD_Major[i].pitch)
+        for i, note in enumerate(new_chord.notes):
+            print(i)
+            print('Note Object: ', new_chord.notes[i])
+            print('Pitch: ', new_chord.notes[i].pitch)
+        for i, note in enumerate(new_chord.notes):
+            new_chord.notes[i].pitch += root
+        return new_chord
+
+    # Print Helper Functions
+    def print_notes_pitch(self):
+        print('---------- Printing Notes ----------')
+        print('Chord Name: ')  # Add the Root Note modded by whatever to find the right note
+        for i, note in enumerate(self.notes):
+            Note.print_note_pitch(self.notes[i])
+        print('------------------------------------')
+
+    def print_notes_all(self):
+        print('---------- Printing Notes ----------')
+        print('Chord Name: ')  # Add the Root Note modded by whatever to find the right note
+        for i, note in enumerate(self.notes):
+            Note.print_note_all(self.notes[i])
+        print('------------------------------------')
+
+

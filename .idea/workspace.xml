@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d8409b0-f44c-411e-a411-1493eccfcd91" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chord.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/midiutil_extensions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/note.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/major-scale.mid" beforeDir="false" afterPath="$PROJECT_DIR$/major-scale.mid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chord.py" beforeDir="false" afterPath="$PROJECT_DIR$/chord.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/midiutil_extensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/midiutil_extensions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/walter.py" beforeDir="false" afterPath="$PROJECT_DIR$/walter.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +22,8 @@
           <file leaf-file-name="walter.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/walter.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+                <state relative-caret-position="527">
+                  <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
@@ -37,11 +35,23 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="chord.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="chord.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/chord.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="196">
-                  <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+                <state relative-caret-position="170">
+                  <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+                  <folding>
+                    <element signature="e#0#11#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="note.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/note.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
                 </state>
               </provider>
             </entry>
@@ -49,8 +59,11 @@
           <file leaf-file-name="midiutil_extensions.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/midiutil_extensions.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+                <state relative-caret-position="51">
+                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+                  <folding>
+                    <element signature="e#0#38#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -79,8 +92,9 @@
         <option value="$PROJECT_DIR$/chords.py" />
         <option value="$PROJECT_DIR$/midiutil_extensions" />
         <option value="$PROJECT_DIR$/midiutil_extensions.py" />
-        <option value="$PROJECT_DIR$/chord.py" />
+        <option value="$PROJECT_DIR$/note.py" />
         <option value="$PROJECT_DIR$/walter.py" />
+        <option value="$PROJECT_DIR$/chord.py" />
       </list>
     </option>
   </component>
@@ -196,15 +210,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/midiutil_extensions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/walter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="527">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -213,8 +230,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chord.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+        <state relative-caret-position="170">
+          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/note.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
         </state>
       </provider>
     </entry>
