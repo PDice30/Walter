@@ -8,7 +8,7 @@
 class Note:
 
     pitch:      int  # midi pitch class value
-    duration:   int  # in beats
+    duration:   float  # in beats
     time:       int  # in beats, time in the track when the note actually begins playing
     track:      int
     channel:    int

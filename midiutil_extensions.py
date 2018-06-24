@@ -15,6 +15,8 @@ class MU_Extensions:
     def add_note(self, midiutil: MIDIFile, note: Note):
         midiutil.addNote(note.track, note.channel, note.pitch, note.time, note.duration, note.volume)
 
+    # def add_notes
+
     def add_riff(self, midiutil: MIDIFile, riff: Riff):
         for i, note in enumerate(riff.notes):
             midiutil.addNote(riff.track, riff.channel, riff.notes[i].pitch,

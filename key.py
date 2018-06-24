@@ -45,8 +45,7 @@ class Key:
             self.octave_pitch       = self.midi_root + Chord.STEP_Perf8
 
     def get_random_pitch(self) -> int:
-        degree = Random.randint(Random(), 0, 8)
-        print(degree)
+        degree = Random.randint(Random(), 1, 8)
 
         if degree == 1:
             return self.tonic_pitch

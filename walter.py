@@ -11,13 +11,16 @@ from midiutil_extensions import MU_Extensions
 
 # <editor-fold desc="Command Line Arguments and ArgumentParser Settings">
 print_notes_detailed = False
-
+output_filename = ''
 # ArgumentParser
 parser = ArgumentParser()
 parser.add_argument("-d", "--detailed", help = "prints out notes in a detailed format", action = "store_true")
+parser.add_argument("-o", "--output_file", help = "specifies the midi output file", type = str)
 args = parser.parse_args()
 if args.detailed:
     print_notes_detailed = True
+if args.output_file:
+    output_filename = args.output_file
 # </editor-fold>
 
 ####### Track Settings #######
@@ -30,24 +33,37 @@ volume      = 100   # 0  - 127
 ##############################
 
 ####### Test Settings ########
-output_filename = '../Tests/riff_tests01.mid'
+# output_filename = ''
 
 MyMIDI = MIDIFile(2)  # One track, defaults to format 1 (tempo track is created automatically)
 MyMIDI.addTempo(track, time, tempo)
-MyMIDI.addTrackName(track, time, 'Test Track 1')
+MyMIDI.addTrackName(0, time, 'Test Track 0')
+MyMIDI.addTrackName(1, time, 'Test Track 1')
 
 # A_Maj_Chord = Chord.chord_major(Chord.ROOT_A, 'A Major', 2, 1)
 A_Maj_Chord = Chord.chord_major(Chord.ROOT_A)
-Chord.print_notes(A_Maj_Chord, print_notes_detailed)
+# Chord.print_notes(A_Maj_Chord, print_notes_detailed)
 
 A_Maj_Chord.duration = 2
 A_Maj_Chord.time = 1
 
 key_A_major = Key('A', 'Major', 57)
-
+key_Cs_minor = Key('Cs', 'Minor', 49)
+## Riffs
 riff_A_major = MelodicRiff(key_A_major)
+riff_A_major.create_riff(16)
 
-riff_A_major.create_riff(MyMIDI, 10)
+riff_Cs_minor = MelodicRiff(key_Cs_minor, [], 1)
+riff_Cs_minor.create_riff(16)
+
+# Riff.print_notes(riff_A_major, print_notes_detailed)
+
+MU_Extensions.add_riff(None, MyMIDI, riff_A_major)
+MU_Extensions.add_riff(None, MyMIDI, riff_Cs_minor)
+
+with open(output_filename, 'wb') as output_file:
+    MyMIDI.writeFile(output_file)
+
 
 # This method needs to respect the chords stuff!
 # MU_Extensions.add_chord(None, MyMIDI, A_Maj_Chord)
@@ -70,11 +86,6 @@ riff_A_major.create_riff(MyMIDI, 10)
 #                            time + (i * 2),
 #                            duration,
 #                            1)
-
-
-with open(output_filename, 'wb') as output_file:
-    MyMIDI.writeFile(output_file)
-
 
 # print(notesC)
 # notesD = Chord.key_translation(None, 2, notesC)

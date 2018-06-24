@@ -9,7 +9,7 @@ class Chord:
 
     notes:      list  # of Note objects -- Make this explicit somehow?
     name:       str   # optional chord name
-    duration:   int   # n beats
+    duration:   float   # n beats
     time:       int   # in beats, time in the track when the note actually begins playing
     track:      int
     channel:    int

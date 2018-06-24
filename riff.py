@@ -2,37 +2,54 @@
 # there are exceptions of course, but this is the basic melodic riff
 from key import Key
 from note import Note
-from midiutil import MIDIFile
-from midiutil_extensions import MU_Extensions
 from random import Random
+
+MAX_DURATION = 3
+MIN_DURATION = 1
 
 
 class Riff:
 
     key: Key
-    notes: list
+    notes: list  # of Note objects
     track: int
     channel: int
 
-    def __init__(self, key: Key):
+    def __init__(self, key: Key, notes = [], track = 0, channel = 0):
         self.key = key
+        self.notes = notes
+        self.track = track
+        self.channel = channel
+
+        # Print Helper Functions
+    def print_notes(self, detailed: bool):
+        print('---------- Printing Notes ----------')
+        print('Riff Name: ')  # Add the Root Note modded by whatever to find the right note
+        if detailed:
+            for i, note in enumerate(self.notes):
+                Note.print_note_all(self.notes[i])
+        else:
+            for i, note in enumerate(self.notes):
+                Note.print_note_pitch(self.notes[i])
+        print('------------------------------------')
 
 
 class MelodicRiff(Riff):
 
-    def __init__(self, key: Key):
-        Riff.__init__(self, key)
+    def __init__(self, key: Key, notes = [], track = 0, channel = 0):
+        Riff.__init__(self, key, notes, track, channel)
 
-    def create_riff(self, midiutil: MIDIFile, num_notes: int, _input = ''):
+    def create_riff(self, num_notes: int, _input = ''):
         time = 0
         for i in range(0, num_notes):
-            duration = Random.randint(Random, 1, 4)
+            duration = Random.randint(Random(), MIN_DURATION, MAX_DURATION)
+            if duration == 3:
+                duration = 0.5
+            # elif duration == 4:
+            #     duration = 0.25
             new_pitch = self.key.get_random_pitch()
-            self.notes.append(Note(new_pitch, duration, time))
+            list.append(self.notes, Note(new_pitch, duration, time))
             time += duration
-
-        # divided into sub functions that take in each note and such?
-        MU_Extensions.add_riff(MU_Extensions(), midiutil, self)
 
 
 class HarmonicRiff(Riff):
