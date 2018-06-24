@@ -15,8 +15,8 @@ class Note:
     volume:     int  # 0 - 127
 
     #  flags for special note marks
-    isAccented: bool
-    isStaccato: bool
+    is_accented: bool
+    is_staccato: bool
 
     def __init__(self, pitch: int, duration = 1, time = 0, track = 0,
                  channel = 0, volume = 100, is_accented = False, is_staccato = False):
@@ -26,8 +26,8 @@ class Note:
         self.track = track
         self.channel = channel
         self.volume = volume
-        self.isAccented = is_accented
-        self.isStaccato = is_staccato
+        self.is_accented = is_accented
+        self.is_staccato = is_staccato
 
     def print_note_pitch(self):
         print('Pitch: ', self.pitch)
@@ -39,6 +39,6 @@ class Note:
         print('Track: ', self.track)
         print('Channel: ', self.channel)
         print('Volume: ', self.volume)
-        print('Accented? : ', self.isAccented)
-        print('Staccato? : ', self.isStaccato)
+        print('Accented? : ', self.is_accented)
+        print('Staccato? : ', self.is_staccato)
 

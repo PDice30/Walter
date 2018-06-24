@@ -1,5 +1,8 @@
 from midiutil.MidiFile import MIDIFile
 from chord import Chord
+from key import Key
+from riff import Riff, MelodicRiff, HarmonicRiff
+from note import Note
 from argparse import ArgumentParser
 from midiutil_extensions import MU_Extensions
 
@@ -27,7 +30,7 @@ volume      = 100   # 0  - 127
 ##############################
 
 ####### Test Settings ########
-output_filename = 'chord-tests03.mid'
+output_filename = 'riff_tests01.mid'
 
 MyMIDI = MIDIFile(2)  # One track, defaults to format 1 (tempo track is created automatically)
 MyMIDI.addTempo(track, time, tempo)
@@ -40,8 +43,14 @@ Chord.print_notes(A_Maj_Chord, print_notes_detailed)
 A_Maj_Chord.duration = 2
 A_Maj_Chord.time = 1
 
+key_A_major = Key('A', 'Major', 57)
+
+riff_A_major = MelodicRiff(key_A_major)
+
+riff_A_major.create_riff(MyMIDI, 10)
+
 # This method needs to respect the chords stuff!
-MU_Extensions.add_chord(None, MyMIDI, A_Maj_Chord)
+# MU_Extensions.add_chord(None, MyMIDI, A_Maj_Chord)
 
 # MU_Extensions.addChord()
 # Make a better extension method to get rid of this ugliness

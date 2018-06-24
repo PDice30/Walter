@@ -1,6 +1,8 @@
-from midiutil.MidiFile import MIDIFile
+from midiutil import MIDIFile
 from chord import Chord
 from note import Note
+from riff import Riff, MelodicRiff, HarmonicRiff
+
 
 class MU_Extensions:
 
@@ -12,3 +14,8 @@ class MU_Extensions:
 
     def add_note(self, midiutil: MIDIFile, note: Note):
         midiutil.addNote(note.track, note.channel, note.pitch, note.time, note.duration, note.volume)
+
+    def add_riff(self, midiutil: MIDIFile, riff: Riff):
+        for i, note in enumerate(riff.notes):
+            midiutil.addNote(riff.track, riff.channel, riff.notes[i].pitch,
+                             riff.notes[i].time, riff.notes[i].duration, riff.notes[i].volume)
