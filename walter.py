@@ -47,19 +47,21 @@ A_Maj_Chord = Chord.chord_major(Chord.ROOT_A)
 A_Maj_Chord.duration = 2
 A_Maj_Chord.time = 1
 
-key_A_major = Key('A', 'Major', 57)
+key_Bb_major = Key('Bb', 'Major', 58)
 key_Cs_minor = Key('Cs', 'Minor', 49)
 ## Riffs
-riff_A_major = MelodicRiff(key_A_major)
-riff_A_major.create_riff(16)
+riff_Bb_major = MelodicRiff(key_Bb_major)
+riff_Bb_major.create_riff(16)
+riff_Bb_major2 = MelodicRiff(key_Bb_major, [], 1)
+riff_Bb_major2.create_riff(16)
 
 riff_Cs_minor = MelodicRiff(key_Cs_minor, [], 1)
 riff_Cs_minor.create_riff(16)
 
 # Riff.print_notes(riff_A_major, print_notes_detailed)
 
-MU_Extensions.add_riff(None, MyMIDI, riff_A_major)
-MU_Extensions.add_riff(None, MyMIDI, riff_Cs_minor)
+MU_Extensions.add_riff(None, MyMIDI, riff_Bb_major)
+MU_Extensions.add_riff(None, MyMIDI, riff_Bb_major2)
 
 with open(output_filename, 'wb') as output_file:
     MyMIDI.writeFile(output_file)
