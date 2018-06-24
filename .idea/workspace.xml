@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d8409b0-f44c-411e-a411-1493eccfcd91" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chord-tests01.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chord-tests02.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chord-tests03.mid" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/key.py" beforeDir="false" afterPath="$PROJECT_DIR$/key.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/midiutil_extensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/midiutil_extensions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note.py" beforeDir="false" afterPath="$PROJECT_DIR$/note.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/riff.py" beforeDir="false" afterPath="$PROJECT_DIR$/riff.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/major-scale.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/major-scale2.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/major-scale3.mid" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/walter.py" beforeDir="false" afterPath="$PROJECT_DIR$/walter.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +23,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.48698226">
       <split-first>
         <leaf>
-          <file leaf-file-name="walter.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="walter.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/walter.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+                <state relative-caret-position="340">
+                  <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                     <element signature="e#331#404#0" />
@@ -32,11 +36,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="riff.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="riff.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/riff.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+                <state relative-caret-position="204">
+                  <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
                   <folding>
                     <element signature="e#173#192#0" expanded="true" />
                   </folding>
@@ -47,8 +51,8 @@
           <file leaf-file-name="key.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/key.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="502">
-                  <caret line="62" column="36" lean-forward="true" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+                <state relative-caret-position="102">
+                  <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
                   <folding>
                     <element signature="e#0#21#0" expanded="true" />
                   </folding>
@@ -64,7 +68,7 @@
             <entry file="file://$PROJECT_DIR$/chord.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="383">
-                  <caret line="61" column="17" lean-forward="true" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+                  <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
                   </folding>
@@ -76,7 +80,7 @@
             <entry file="file://$PROJECT_DIR$/note.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="255">
-                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+                  <caret line="15" selection-start-line="15" selection-end-line="15" />
                 </state>
               </provider>
             </entry>
@@ -84,8 +88,8 @@
           <file leaf-file-name="midiutil_extensions.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/midiutil_extensions.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+                <state relative-caret-position="357">
+                  <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
@@ -102,10 +106,12 @@
       <find>STEP_</find>
       <find>STEP_perfect_fifth</find>
       <find>Note</find>
+      <find>note</find>
     </findStrings>
     <replaceStrings>
       <replace>STEP_Perf5</replace>
       <replace>int</replace>
+      <replace>pitch</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -120,10 +126,10 @@
         <option value="$PROJECT_DIR$/midiutil_extensions" />
         <option value="$PROJECT_DIR$/chord.py" />
         <option value="$PROJECT_DIR$/note.py" />
-        <option value="$PROJECT_DIR$/key.py" />
         <option value="$PROJECT_DIR$/riff.py" />
         <option value="$PROJECT_DIR$/walter.py" />
         <option value="$PROJECT_DIR$/midiutil_extensions.py" />
+        <option value="$PROJECT_DIR$/key.py" />
       </list>
     </option>
   </component>
@@ -184,9 +190,10 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10572917" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10572917" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
@@ -194,7 +201,6 @@
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -259,7 +265,7 @@
     <entry file="file://$PROJECT_DIR$/chord.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
-          <caret line="61" column="17" lean-forward="true" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -269,47 +275,47 @@
     <entry file="file://$PROJECT_DIR$/note.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/key.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="62" column="36" lean-forward="true" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/midiutil_extensions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/walter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#331#404#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/riff.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="204">
+          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
           <folding>
             <element signature="e#173#192#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/key.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/walter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#331#404#0" />
           </folding>
         </state>
       </provider>

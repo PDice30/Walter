@@ -30,7 +30,7 @@ volume      = 100   # 0  - 127
 ##############################
 
 ####### Test Settings ########
-output_filename = 'riff_tests01.mid'
+output_filename = '../Tests/riff_tests01.mid'
 
 MyMIDI = MIDIFile(2)  # One track, defaults to format 1 (tempo track is created automatically)
 MyMIDI.addTempo(track, time, tempo)
