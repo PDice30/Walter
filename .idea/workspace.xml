@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d8409b0-f44c-411e-a411-1493eccfcd91" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Phil.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/key.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chord.py" beforeDir="false" afterPath="$PROJECT_DIR$/chord.py" afterDir="false" />
@@ -46,8 +47,8 @@
           <file leaf-file-name="key.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/key.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+                <state relative-caret-position="255">
+                  <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
                 </state>
               </provider>
             </entry>
@@ -283,8 +284,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/key.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="255">
+          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
         </state>
       </provider>
     </entry>
