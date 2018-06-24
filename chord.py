@@ -110,17 +110,17 @@ class Chord:
             new_chord.notes[i].pitch += root
         return new_chord
 
-    def key_translation(step, chord):
-        new_chord = copy.copy(chord)
-        for i, note in enumerate(chord):
-            new_chord.notes[i] = chord.notes[i] + step
-        return new_chord
-
     def chord_minor(root):
         new_chord = Chord()
         new_chord.notes = Chord.CHORD_Minor
         for i, note in enumerate(new_chord.notes):
             new_chord.notes[i].pitch += root
+        return new_chord
+
+    def key_translation(step, chord):
+        new_chord = copy.copy(chord)
+        for i, note in enumerate(chord):
+            new_chord.notes[i] = chord.notes[i] + step
         return new_chord
 
     def chord_major_doc(root):
