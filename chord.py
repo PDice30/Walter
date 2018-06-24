@@ -15,11 +15,18 @@ class Chord:
     channel:    int
     volume:     int   # 0 - 127
 
-    def __init__(self, notes = None, name = ''):
+    def __init__(self, notes = None, name = '', duration = 1, time = 0, track = 0, channel = 0, volume = 100):
         self.notes = notes
         self.name = name
+        self.duration = duration
+        self.time = time
+        self.track = track
+        self.channel = channel
+        self.volume = volume
 
     # base range for notes = 48 (C) to 59 (B)
+
+    # <editor-fold desc="MIDI Pitch Values for Root Notes">
     ROOT_Cb = 47
     ROOT_C  = 48
     ROOT_Cs = 49
@@ -43,7 +50,9 @@ class Chord:
     ROOT_Bs = 60
 
     ROOT_Note = 0
+    # </editor-fold>
 
+    # <editor-fold desc="Interval/Step Values">
     STEP_Min2 = 1
     STEP_Maj2 = 2
     STEP_Min3 = 3
@@ -67,15 +76,19 @@ class Chord:
     STEP_Perf12 = 19
 
     STEP_Octave = 12
+    # </editor-fold>
 
     # There shouldn't be note specifications, it should all be derivable from the input
     # Account for inversions
+
+    # <editor-fold desc="All Chord Values">
     CHORD_Major = [Note(ROOT_Note),
                    Note(ROOT_Note + STEP_Maj3),
                    Note(ROOT_Note + STEP_Perf5)]
     CHORD_Minor = [Note(ROOT_Note),
                    Note(ROOT_Note + STEP_Min3),
                    Note(ROOT_Note + STEP_Perf5)]
+    # </editor-fold>
 
     # CHORD_Major2 = [ROOT_Note, ROOT_Note + STEP_Maj3, ROOT_Note + STEP_Perf5]
     # CHORD_Minor2 = [ROOT_Note, ROOT_Note + STEP_Min3, ROOT_Note + STEP_Perf5]
@@ -84,30 +97,33 @@ class Chord:
     C_maj7      = [ROOT_C, ROOT_C + STEP_Maj3, ROOT_C + STEP_Perf5, ROOT_C + STEP_Maj7]
     A_minor     = [ROOT_A, ROOT_A + STEP_Min3, ROOT_A + STEP_Perf5]
 
-    def key_translation(self, step, chord):
-        new_chord = copy.copy(chord)
-        for i, note in enumerate(chord):
-            new_chord.notes[i] = chord.notes[i] + step
-        return new_chord
-
     # Can this be made more functional for all chords?
     # root should be the midi value of the pitch class
-    def chord_major(self, root):
+
+    # <editor-fold desc="Class Functions">
+
+    # needs to be a parent init function before all of this to define the other attributes
+    def chord_major(root):
         new_chord = Chord()
         new_chord.notes = Chord.CHORD_Major
         for i, note in enumerate(new_chord.notes):
             new_chord.notes[i].pitch += root
         return new_chord
 
-    def chord_minor(self, root):
+    def key_translation(step, chord):
+        new_chord = copy.copy(chord)
+        for i, note in enumerate(chord):
+            new_chord.notes[i] = chord.notes[i] + step
+        return new_chord
+
+    def chord_minor(root):
         new_chord = Chord()
         new_chord.notes = Chord.CHORD_Minor
         for i, note in enumerate(new_chord.notes):
             new_chord.notes[i].pitch += root
         return new_chord
 
-    # Prints everything you might need to know about this method
-    def chord_major_doc(self, root):
+    def chord_major_doc(root):
         print('Root Note: ', root)
         new_chord = Chord()
         new_chord.notes = Chord.CHORD_Major
@@ -123,19 +139,18 @@ class Chord:
             new_chord.notes[i].pitch += root
         return new_chord
 
-    # Print Helper Functions
-    def print_notes_pitch(self):
-        print('---------- Printing Notes ----------')
-        print('Chord Name: ')  # Add the Root Note modded by whatever to find the right note
-        for i, note in enumerate(self.notes):
-            Note.print_note_pitch(self.notes[i])
-        print('------------------------------------')
+    # </editor-fold>
 
-    def print_notes_all(self):
+    # Print Helper Functions
+    def print_notes(self, detailed: bool):
         print('---------- Printing Notes ----------')
         print('Chord Name: ')  # Add the Root Note modded by whatever to find the right note
-        for i, note in enumerate(self.notes):
-            Note.print_note_all(self.notes[i])
+        if detailed:
+            for i, note in enumerate(self.notes):
+                Note.print_note_all(self.notes[i])
+        else:
+            for i, note in enumerate(self.notes):
+                Note.print_note_pitch(self.notes[i])
         print('------------------------------------')
 
 
