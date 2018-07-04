@@ -41,7 +41,7 @@ MyMIDI.addTrackName(0, time, 'Test Track 0')
 MyMIDI.addTrackName(1, time, 'Test Track 1')
 
 # A_Maj_Chord = Chord.chord_major(Chord.ROOT_A, 'A Major', 2, 1)
-A_Maj_Chord = Chord.chord_major(Chord.ROOT_A)
+A_Maj_Chord = Chord.get_chord_major(None, Chord.ROOT_A)
 # Chord.print_notes(A_Maj_Chord, print_notes_detailed)
 
 A_Maj_Chord.duration = 2

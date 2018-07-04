@@ -39,12 +39,15 @@ class MelodicRiff(Riff):
     def __init__(self, key: Key, notes = [], track = 0, channel = 0):
         Riff.__init__(self, key, notes, track, channel)
 
-    def create_riff(self, num_notes: int, _input = ''):
+    def create_riff(self, riff_length: int, _input = ''):
         time = 0
-        for i in range(0, num_notes):
+        while time < riff_length:
             duration = Random.randint(Random(), MIN_DURATION, MAX_DURATION)
+            # half a beat
             if duration == 3:
                 duration = 0.5
+            if duration + time > riff_length:
+                continue
             # elif duration == 4:
             #     duration = 0.25
             new_pitch = self.key.get_random_pitch()

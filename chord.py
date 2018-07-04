@@ -7,7 +7,7 @@ class Chord:
     # What should a 'Chord' have as properties?
     # Notes, Duration.  Should the notes themselves have the duration or the chord itself?
 
-    notes:      list  # of Note objects -- Make this explicit somehow?
+    notes:      [Note]  # of Note objects
     name:       str   # optional chord name
     duration:   float   # n beats
     time:       int   # in beats, time in the track when the note actually begins playing
@@ -103,14 +103,14 @@ class Chord:
     # <editor-fold desc="Class Functions">
 
     # needs to be a parent init function before all of this to define the other attributes
-    def chord_major(root):
+    def get_chord_major(self, root):
         new_chord = Chord()
         new_chord.notes = Chord.CHORD_Major
         for i, note in enumerate(new_chord.notes):
             new_chord.notes[i].pitch += root
         return new_chord
 
-    def chord_minor(root):
+    def get_chord_minor(self, root):
         new_chord = Chord()
         new_chord.notes = Chord.CHORD_Minor
         for i, note in enumerate(new_chord.notes):

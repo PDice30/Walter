@@ -44,6 +44,9 @@ class Key:
             self.leading_pitch      = self.midi_root + Chord.STEP_Min7
             self.octave_pitch       = self.midi_root + Chord.STEP_Perf8
 
+    # def get_chord_in_key(self) -> Chord:
+
+
     def get_random_pitch(self) -> int:
         degree = Random.randint(Random(), 1, 8)
 

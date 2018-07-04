@@ -29,6 +29,11 @@ class Note:
         self.is_accented = is_accented
         self.is_staccato = is_staccato
 
+    # The Note class should have methods that augment it
+    # direction is either -1 for lower or 1 for higher
+    def move_pitch(self, direction: int, semitones: int):
+        self.pitch += (direction * semitones)
+
     def print_note_pitch(self):
         print('Pitch: ', self.pitch)
 
